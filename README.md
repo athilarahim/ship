@@ -42,9 +42,10 @@ How it works:
    _______________________________________________________
    Eg: curl.exe -x http://localhost:8080 http://httpforever.com/
 
-    Raw HTTP request will be like:
+    Raw HTTP request will be like:<br />
+    
        GET http://httpforever.com/ HTTP/1.1
-       Host: httpforever.com                  
+       Host: httpforever.com               
        User-Agent: curl/8.11.1
        Accept: */*
        Proxy-Connection: Keep-Alive
