@@ -61,3 +61,9 @@ How it works:
 2. Sends error message to the browser (or curl) if response length exceeds maximum response size.
 3. Otherwise sends the reponse to the browser.
 
+**HOW TO RUN THIS?**
+1. Build docker image for client: docker build -t ship-proxy-client -f client/Dockerfile . 
+2. Build docker image for client: docker build -t ship-proxy-server -f server/Dockerfile .
+3. Start the server first: docker run -d -p 9000:9000 --name proxy-server ship-proxy-server
+4. Start the client: docker run -d -p 8080:8080 --name proxy-client --link proxy-server:server -e SERVER_HOST=server ship-proxy-client
+5. Test the setup: curl.exe -v -x http://localhost:8080 http://httpforever.com/
