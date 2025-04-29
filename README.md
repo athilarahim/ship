@@ -41,12 +41,13 @@ How it works:
 3. Then it forwards all headers except the request line (already handled)
    _______________________________________________________
    Eg: curl.exe -x http://localhost:8080 http://httpforever.com/
+
     Raw HTTP request will be like:
-    GET http://httpforever.com/ HTTP/1.1   - this is request line and all the below are header lines
-    Host: httpforever.com                  
-    User-Agent: curl/8.11.1
-    Accept: */*
-    Proxy-Connection: Keep-Alive
+       GET http://httpforever.com/ HTTP/1.1
+       Host: httpforever.com                  
+       User-Agent: curl/8.11.1
+       Accept: */*
+       Proxy-Connection: Keep-Alive
    _______________________________________________________________
 5. Server receives the remote response and writes everything to a response buffer(including response header and body).
 6. Returns the response buffer.
